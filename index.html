@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - William Moraes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #212121; /* Chumbo/quase preto */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header img.logo { /* Estilo para o logo no cabeçalho */
+      max-height: 80px; /* Ajuste o tamanho conforme necessário */
+      margin-bottom: 10px;
+    }
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+    .container {
+      padding: 20px;
+      max-width: 1200px; /* Limita a largura do conteúdo principal */
+      margin: 0 auto; /* Centraliza o container */
+    }
+    .projetos-grid { /* Novo contêiner para os projetos */
+      display: flex;
+      flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+      gap: 20px; /* Espaçamento entre os projetos */
+      justify-content: center; /* Centraliza os projetos quando há menos de 2 por linha */
+    }
+    .projeto {
+      background: white;
+      flex: 1 1 calc(50% - 10px); /* Ocupa cerca de metade da largura, considerando o gap */
+      min-width: 300px; /* Largura mínima para evitar que fiquem muito pequenos */
+      box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
+      margin-bottom: 0; /* Remove margin-bottom individual, usando gap no grid */
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center; /* Centraliza o texto dentro de cada projeto */
+    }
+    .projeto img {
+      max-width: 100%; /* Garante que a imagem não exceda o contêiner do projeto */
+      height: auto; /* Mantém proporção */
+      border-radius: 5px;
+      margin-bottom: 15px; /* Espaço abaixo da imagem */
+    }
+    /* Mídia query para telas menores (celulares) - um projeto por linha */
+    @media (max-width: 768px) {
+      .projeto {
+        flex: 1 1 100%; /* Ocupa 100% da largura em telas menores */
+      }
+    }
+    .botao {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    footer {
+      background-color: #212121; /* Chumbo/quase preto */
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="White.png" alt="Logo WM Engenharia" class="logo">
+    <h1>Portfólio William Moraes</h1>
+    <p>Projetando seu conforto!</p>
+    <nav>
+      <a href="#portfolio">Projetos</a>
+      <a href="#sobre">Sobre Mim</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <div class="container" id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Olá! Sou William Moraes e atuo na área de projetos de móveis planejados, com foco em criar ambientes funcionais, estéticos e que otimizem cada espaço. Minha paixão é transformar ideias em realidade, oferecendo soluções personalizadas para cozinhas, salas, dormitórios, banheiros e outros ambientes. Com experiência em detalhamento técnico, busco sempre a excelência e a satisfação do cliente em cada projeto.</p>
+  </div>
+
+  <div class="container" id="portfolio">
+    <h2>Projetos</h2>
+    <div class="projetos-grid">
+
+      <div class="projeto">
+        <h3>Projeto de Cozinha Planejada</h3>
+        <img src="coz.jpg" alt="Cozinha Planejada">
+        <p>Desenvolvimento completo de cozinha moderna e funcional, com otimização de espaço e materiais de alta qualidade. Inclui plano de corte e detalhamento técnico em PDF.</p>
+        <a class="botao" href="https://drive.google.com/file/d/1IGN427ADlNwG1IgGVuBnF_ZlRBR1ndxL/preview" target="_blank">Ver PDF</a>
+      </div>
+
+      <div class="projeto">
+        <h3>Projeto de Sala Planejada</h3>
+        <img src="sala.jpg" alt="Sala Planejada">
+        <p>Conceito e detalhes de uma sala de estar com mobiliário otimizado, design moderno e soluções inteligentes para entretenimento e armazenamento. (Projeto em desenvolvimento).</p>
+        <a class="botao" href="#" target="_blank">Ver PDF (Em Breve)</a>
+      </div>
+
+      <div class="projeto">
+        <h3>Projeto de Dormitório Planejado</h3>
+        <img src="quarto.jpg" alt="Dormitório Planejado">
+        <p>Desenvolvimento de dormitório com aproveitamento máximo de espaço, soluções personalizadas para armários, cama e bancadas, visando conforto e funcionalidade.</p>
+        <a class="botao" href="https://drive.google.com/file/d/1gNzqkqLocKp6rm3nQRs1t_Cypy_qWoMN/preview" target="_blank">Ver PDF</a>
+      </div>
+
+      <div class="projeto">
+        <h3>Projeto de Banheiro Planejado</h3>
+        <img src="wc.jpg" alt="Banheiro Planejado">
+        <p>Design funcional e elegante para banheiro, incluindo bancadas, armários sob medida e soluções para otimização de pequenos espaços.</p>
+        <a class="botao" href="https://drive.google.com/file/d/1tfGlcab3tje8ECvuGEi5sDLhOKQ1RHMY/preview" target="_blank">Ver PDF</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" id="contato">
+    <h2>Contato</h2>
+    <p>Entre em contato para transformar seu espaço:</p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5511954284058" target="_blank">(11) 95428-4058</a></p>
+    <p><strong>E-mail:</strong> <a href="mailto:williammoraessp@gmail.com">williammoraessp@gmail.com</a></p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/wmengenhariaofc/" target="_blank">@wmengenhariaofc</a></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 William Moraes. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
