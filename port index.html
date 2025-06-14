@@ -3,82 +3,268 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio - William Moraes</title>
+  <title>Portfólio William Moraes | Engenharia e Design de Interiores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    :root {
+      --cor-primaria: #212121; /* Quase preto / Chumbo */
+      --cor-secundaria: #333333; /* Cinza escuro */
+      --cor-destaque: #007bff; /* Azul vibrante, pode ser alterado para um ciano ou verde-azulado */
+      --cor-fundo: #f2f2f2; /* CINZA CLARO MAIS VISÍVEL */
+      --cor-texto: #333333;
+      --cor-texto-claro: #ffffff;
+      --sombra-leve: 0 4px 10px rgba(0,0,0,0.08);
+      --transicao-suave: all 0.3s ease-in-out;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
-      color: #333;
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: 1.6;
     }
+
     header {
-      background-color: #212121; /* Chumbo/quase preto */
-      color: white;
-      padding: 20px;
+      background-color: var(--cor-primaria);
+      color: var(--cor-texto-claro);
+      padding: 30px 20px;
       text-align: center;
+      box-shadow: var(--sombra-leve);
     }
-    header img.logo { /* Estilo para o logo no cabeçalho */
-      max-height: 80px; /* Ajuste o tamanho conforme necessário */
-      margin-bottom: 10px;
+    header img.logo {
+      max-height: 100px; /* Logo maior e mais impactante */
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Sombra sutil para o logo */
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.8em; /* Título maior */
+      margin: 0 0 10px;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    nav {
+      margin-top: 15px;
     }
     nav a {
-      margin: 0 10px;
-      color: white;
+      margin: 0 18px;
+      color: var(--cor-texto-claro);
       text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 1.05em;
+      position: relative;
+      transition: var(--transicao-suave);
     }
+    nav a::after { /* Linha de destaque ao passar o mouse */
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--cor-destaque);
+      left: 0;
+      bottom: -5px;
+      transition: var(--transicao-suave);
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a:hover {
+      color: var(--cor-destaque);
+    }
+
     .container {
-      padding: 20px;
-      max-width: 1200px; /* Limita a largura do conteúdo principal */
-      margin: 0 auto; /* Centraliza o container */
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .projetos-grid { /* Novo contêiner para os projetos */
+    .container h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 2.2em;
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--cor-secundaria);
+      position: relative;
+    }
+    .container h2::after { /* Linha decorativa abaixo do título */
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background-color: var(--cor-destaque);
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -15px;
+      border-radius: 2px;
+    }
+
+    .projetos-grid {
       display: flex;
-      flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-      gap: 20px; /* Espaçamento entre os projetos */
-      justify-content: center; /* Centraliza os projetos quando há menos de 2 por linha */
+      flex-wrap: wrap;
+      gap: 30px; /* Mais espaçamento entre projetos */
+      justify-content: center;
     }
     .projeto {
-      background: white;
-      flex: 1 1 calc(50% - 10px); /* Ocupa cerca de metade da largura, considerando o gap */
-      min-width: 300px; /* Largura mínima para evitar que fiquem muito pequenos */
-      box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
-      margin-bottom: 0; /* Remove margin-bottom individual, usando gap no grid */
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: var(--cor-texto-claro); /* Fundo do card continua branco para contraste */
+      flex: 1 1 calc(50% - 15px); /* Ocupa metade da largura com gap de 30px */
+      min-width: 300px;
+      box-sizing: border-box;
+      padding: 25px; /* Mais padding */
+      border-radius: 12px; /* Cantos mais arredondados */
+      box-shadow: var(--sombra-leve);
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center; /* Centraliza o texto dentro de cada projeto */
+      text-align: center;
+      transition: var(--transicao-suave); /* Animação no hover do card */
+      border: 1px solid rgba(0,0,0,0.05); /* Borda sutil */
+    }
+    .projeto:hover {
+      transform: translateY(-8px); /* Eleva o card suavemente */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra mais intensa */
+      border-color: var(--cor-destaque);
+    }
+    .projeto h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.6em;
+      color: var(--cor-secundaria);
+      margin-top: 0;
+      margin-bottom: 15px;
     }
     .projeto img {
-      max-width: 100%; /* Garante que a imagem não exceda o contêiner do projeto */
-      height: auto; /* Mantém proporção */
-      border-radius: 5px;
-      margin-bottom: 15px; /* Espaço abaixo da imagem */
+      max-width: 100%;
+      height: 220px; /* Altura fixa para imagens para uniformidade */
+      object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    /* Mídia query para telas menores (celulares) - um projeto por linha */
+    .projeto p {
+      font-size: 0.95em;
+      color: #666;
+      margin-bottom: 25px;
+      flex-grow: 1; /* Para garantir que o botão fique sempre na parte inferior */
+    }
+
+    .botao {
+      display: inline-flex; /* Para alinhar ícone e texto */
+      align-items: center;
+      gap: 8px; /* Espaço entre ícone e texto */
+      margin-top: auto; /* Empurra o botão para o fundo do card */
+      padding: 12px 25px;
+      background-color: var(--cor-destaque);
+      color: var(--cor-texto-claro);
+      text-decoration: none;
+      border-radius: 6px; /* Cantos um pouco mais suaves */
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1em;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Sombra para o botão */
+      transition: var(--transicao-suave);
+    }
+    .botao:hover {
+      background-color: #0056b3; /* Tom mais escuro no hover */
+      transform: translateY(-3px); /* Efeito de elevação */
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+    }
+
+    /* Estilo para os botões de contato no rodapé */
+    .contato-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px; /* Espaço entre os ícones de contato */
+      margin-top: 20px;
+      flex-wrap: wrap; /* Para quebrar linha em telas menores */
+    }
+    .contato-links a {
+      color: var(--cor-texto); /* Cor do texto padrão para os links de contato */
+      text-decoration: none;
+      font-size: 1.1em; /* Tamanho do texto */
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Roboto', sans-serif;
+      transition: var(--transicao-suave);
+      padding: 8px 15px; /* Adicionado padding para os links de contato */
+      border-radius: 5px;
+      border: 1px solid transparent; /* Borda transparente para transição */
+    }
+    .contato-links a i {
+      font-size: 1.8em; /* Tamanho do ícone */
+      color: var(--cor-destaque); /* Ícone colorido */
+      transition: var(--transicao-suave);
+    }
+    .contato-links a:hover {
+      color: var(--cor-primaria); /* Cor do texto no hover */
+      background-color: rgba(0, 123, 255, 0.05); /* Fundo sutil no hover */
+      border-color: var(--cor-destaque); /* Borda com a cor de destaque no hover */
+    }
+    .contato-links a:hover i {
+      color: var(--cor-primaria); /* Cor do ícone no hover */
+      transform: scale(1.1); /* Animação de escala no ícone */
+    }
+
+
+    footer {
+      background-color: var(--cor-primaria);
+      color: var(--cor-texto-claro);
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+      font-size: 0.9em;
+    }
+
+    /* Mídia query para telas menores (celulares) */
     @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 0.95em;
+      }
+      .container {
+        padding: 20px 15px;
+      }
+      .container h2 {
+        font-size: 1.8em;
+      }
+      .projetos-grid {
+        gap: 20px;
+      }
       .projeto {
         flex: 1 1 100%; /* Ocupa 100% da largura em telas menores */
+        padding: 20px;
       }
-    }
-    .botao {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    footer {
-      background-color: #212121; /* Chumbo/quase preto */
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      .projeto img {
+        height: 180px; /* Ajusta altura da imagem em telas menores */
+      }
+      .projeto h3 {
+        font-size: 1.4em;
+      }
+      .botao {
+        padding: 10px 20px;
+        font-size: 0.95em;
+      }
+      .contato-links {
+        flex-direction: column; /* Coloca os links de contato um abaixo do outro */
+        gap: 15px;
+      }
+      .contato-links a {
+        justify-content: center; /* Centraliza os itens quando em coluna */
+      }
     }
   </style>
 </head>
@@ -86,7 +272,7 @@
   <header>
     <img src="White.png" alt="Logo WM Engenharia" class="logo">
     <h1>Portfólio William Moraes</h1>
-    <p>Projetando seu conforto!</p>
+    <p>Engenharia e Design de Ambientes</p>
     <nav>
       <a href="#portfolio">Projetos</a>
       <a href="#sobre">Sobre Mim</a>
@@ -96,7 +282,7 @@
 
   <div class="container" id="sobre">
     <h2>Sobre Mim</h2>
-    <p>Olá! Sou William Moraes e atuo na área de projetos de móveis planejados, com foco em criar ambientes funcionais, estéticos e que otimizem cada espaço. Minha paixão é transformar ideias em realidade, oferecendo soluções personalizadas para cozinhas, salas, dormitórios, banheiros e outros ambientes. Com experiência em detalhamento técnico, busco sempre a excelência e a satisfação do cliente em cada projeto.</p>
+    <p>Olá! Sou William Moraes, atuo na área de projetos de móveis planejados e engenharia, com foco em criar ambientes funcionais, estéticos e que otimizem cada espaço. Minha paixão é transformar ideias em realidade, oferecendo soluções personalizadas para cozinhas, salas, dormitórios, banheiros e outros ambientes. Com experiência em detalhamento técnico, busco sempre a excelência e a satisfação do cliente em cada projeto, aliando inovação, qualidade e tecnologia.</p>
   </div>
 
   <div class="container" id="portfolio">
@@ -137,9 +323,17 @@
   <div class="container" id="contato">
     <h2>Contato</h2>
     <p>Entre em contato para transformar seu espaço:</p>
-    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5511954284058" target="_blank">(11) 95428-4058</a></p>
-    <p><strong>E-mail:</strong> <a href="mailto:williammoraessp@gmail.com">williammoraessp@gmail.com</a></p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/wmengenhariaofc/" target="_blank">@wmengenhariaofc</a></p>
+    <div class="contato-links">
+      <a href="https://wa.me/5511954284058" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="mailto:williammoraessp@gmail.com">
+        <i class="fas fa-envelope"></i> E-mail
+      </a>
+      <a href="https://www.instagram.com/wmengenhariaofc/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
   </div>
 
   <footer>
